@@ -163,7 +163,7 @@ export default function Cart({cartItems,setCartItems}){
     ) : (
       <Fragment>
         <h2>
-          <p>Your order has been placed successfully 🎉</p>
+          <p>Your order has been placed successfully </p>
         </h2>
       </Fragment>
     );

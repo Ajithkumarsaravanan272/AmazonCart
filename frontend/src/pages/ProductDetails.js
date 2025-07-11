@@ -18,7 +18,7 @@ export default function ProductDetails({cartItems,setCartItems}){
            if(!itemExist){
              const newItem = { product, qty };
              setCartItems((state) => [...state, newItem]);
-             toast.success("Cart Item added successfully")
+             toast.success("Cart Item added successfully");
            }    
      } 
 
@@ -45,8 +45,8 @@ export default function ProductDetails({cartItems,setCartItems}){
               <img
                 src={product.images[0].image}
                 alt="sdf"
-                height="500"
-                width="500"
+                height="400"
+                width="400"
               />
             </div>
 

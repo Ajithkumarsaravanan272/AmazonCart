@@ -1,9 +1,10 @@
+
 const ProductModel = require("../models/productModel");
 
-//Get product API = api/v1/products
+//Get product API = /api/v1/products
 exports.getProducts = async (req, res) => {
   try {
-    let query = req.query.keyword ? {
+    let query = req.query.keyword ? { 
           name: {
             $regex: req.query.keyword,
             $options: "i",
@@ -20,7 +21,7 @@ exports.getProducts = async (req, res) => {
   }
 };
 
-//Get single product API = api/v1/product/:id
+//Get single product API = /api/v1/product/:id
 exports.getSingleProduct = async (req, res) => {
   try {
     const product = await ProductModel.findById(req.params.id);
