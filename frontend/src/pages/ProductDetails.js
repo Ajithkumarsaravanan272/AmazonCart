@@ -84,7 +84,7 @@ export default function ProductDetails({cartItems,setCartItems}){
                 style={{marginLeft:"10px"}}
                 className="btn btn-primary d-inline ml-4"
                 onClick={addCart}
-                disabled={product.stock == 0}
+                disabled={product.stock === 0}
               >
                 Add to Cart
               </button>
