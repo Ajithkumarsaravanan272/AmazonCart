@@ -10,7 +10,7 @@ const products = require("./routes/product");
 const orders = require("./routes/order");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/EcommerceApp").then(() => {
+mongoose.connect("mongodb+srv://ajithkumar272:root@cluster0.igxdtdo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(() => {
   console.log("database connected successfully");
 });
 
