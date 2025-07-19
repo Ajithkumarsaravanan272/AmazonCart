@@ -8,7 +8,7 @@ export default function ProductDetails({cartItems,setCartItems}){
     const {id}=useParams();
 
      useEffect(() => {
-            fetch(https://ecommerceapp-y50f.onrender.com +"/products/"+id)
+            fetch(process.env.REACT_APP_API_URL +"/products/"+id)
             .then(res => res.json())
             .then(res => setProduct(res.product))
          },[id]);
