@@ -10,7 +10,7 @@ const products = require("./routes/product");
 const orders = require("./routes/order");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://ajithkumar272:root@cluster0.igxdtdo.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0").then(() => {
+mongoose.connect("mongodb://ajithkumar272:root@ac-imyjkmg-shard-00-00.igxdtdo.mongodb.net:27017,ac-imyjkmg-shard-00-01.igxdtdo.mongodb.net:27017,ac-imyjkmg-shard-00-02.igxdtdo.mongodb.net:27017/Ecommerce?ssl=true&replicaSet=atlas-6cz19s-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0").then(() => {
   console.log("database connected successfully");
 });
 
