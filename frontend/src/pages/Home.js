@@ -8,7 +8,7 @@ export default function Home() {
    const [searchParams,setSearchParams]=useSearchParams();
 
      useEffect(() => {
-        fetch(https://ecommerceapp-y50f.onrender.com + "/products?"+searchParams)
+        fetch(process.env.REACT_APP_API_URL + "/products?"+searchParams)
         .then(res => res.json())
         .then(res => setProducts(res.products))
      },[searchParams]);
