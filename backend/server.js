@@ -14,7 +14,10 @@ mongoose.connect("mongodb://ajithkumar272:root@ac-imyjkmg-shard-00-00.igxdtdo.mo
   console.log("database connected successfully");
 });
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://amazoncart-frontend.onrender.com',
+  credentials: true  // if you're using cookies
+}));
 app.use(express.json());
 app.use("/api/v1/", products);
 app.use("/api/v1/", orders);
