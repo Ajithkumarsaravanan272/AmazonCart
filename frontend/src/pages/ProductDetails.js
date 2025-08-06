@@ -8,7 +8,7 @@ export default function ProductDetails({cartItems,setCartItems}){
     const {id}=useParams();
 
      useEffect(() => {
-            fetch(process.env.REACT_APP_API_URL +"/api/v1/products/"+id)
+            fetch(process.env.REACT_APP_API_URL +"/api/v1/product/"+id)
             .then(res => res.json())
             .then(res => setProduct(res.product))
          },[id]);
