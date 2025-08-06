@@ -11,7 +11,7 @@ export default function ProductDetails({cartItems,setCartItems}){
             fetch(process.env.REACT_APP_API_URL +"/api/v1/products/"+id)
             .then(res => res.json())
             .then(res => setProduct(res.product))
-         },[id]);
+         },[id]); 
 
      function addCart(){
            const itemExist=cartItems.find((item)=> item.product._id === product._id)
