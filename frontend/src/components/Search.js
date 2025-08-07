@@ -9,7 +9,7 @@ export default function Search(){
      }
 
     return (
-      <div className="input-group">
+      <div className="input-group" style={{ marginLeft: "17px"}}>
         <input
           type="text"
           id="search_field"
