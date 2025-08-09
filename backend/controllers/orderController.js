@@ -11,11 +11,13 @@ try{
     const order=await orderModel.create({cartItems,amount,status});
     
 //updating product stock
-     await cartItems.forEach(async (item) => {
-        const  product=await productModel.findById(item.product._id);
-        product.stock = product.stock - item.qty;
-        await product.save();
-    })
+     await Promise.all(
+       cartItems.map(async (item) => {
+         const product = await productModel.findById(item.product._id);
+         product.stock -= item.qty;
+         await product.save();
+       })
+     );
     res.json({success:true,order});
    }catch (err) {
     console.error(err);
