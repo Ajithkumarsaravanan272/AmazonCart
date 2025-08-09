@@ -11,7 +11,7 @@ try{
     const order=await orderModel.create({cartItems,amount,status});
     
 //updating product stock
-    await cartItems.forEach(async (item) => {
+     await cartItems.forEach(async (item) => {
         const  product=await productModel.findById(item.product._id);
         product.stock = product.stock - item.qty;
         await product.save();
