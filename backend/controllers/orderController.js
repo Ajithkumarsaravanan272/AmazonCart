@@ -4,6 +4,7 @@ const orderModel=require("../models/orderModel");
 
 //create order
 exports.createOrder=async (req,res)=>{
+try{
     const cartItems=req.body;
     const amount = Number(cartItems.reduce((acc, item) => (acc + item.product.price * item.qty), 0)).toFixed(2);
     const status="pending";
@@ -15,6 +16,9 @@ exports.createOrder=async (req,res)=>{
         product.stock = product.stock - item.qty;
         await product.save();
     })
-
     res.json({success:true,order});
+   }catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
 }
