@@ -38,7 +38,7 @@ export default function Cart({cartItems,setCartItems}){
     }
 
     function placeOrderHandler(){
-        fetch(process.env.REACT_APP_API_URL+"/orders",{
+        fetch(process.env.REACT_APP_API_URL+"api/v1/orders",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(cartItems)
